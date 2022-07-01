@@ -1,0 +1,18 @@
+name: Mula-Api
+
+on:
+  push:
+    branches: [ master ]
+jobs:
+  laravel-deployer:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy to production
+      uses: appleboy/ssh-action@master
+      with:
+          host: ${{ secrets.MULA_API_HOST }}
+          username: ${{ secrets.MULA_API_USER }}
+          password: ${{ secrets.MULA_API_PASS }}
+          script: 'cd /var/www/mula-api && ./deployer.sh'
