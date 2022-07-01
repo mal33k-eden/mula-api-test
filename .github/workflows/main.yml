@@ -14,5 +14,5 @@ jobs:
       with:
           host: ${{ secrets.MULA_API_TEST_HOST }}
           username: ${{ secrets.MULA_API_TEST_USERNAME }}
-          password: ${{ secrets.MULA_API_TEST_PASS }}
+          key: ${{ secrets.MULA_API_TEST_KEY }}
           script: 'cd /var/www/html/api/mula-api-test && ./deployer.sh'
