@@ -12,7 +12,7 @@ jobs:
     - name: Deploy to production
       uses: appleboy/ssh-action@master
       with:
-          host: ${{ secrets.MULA_API_HOST }}
-          username: ${{ secrets.MULA_API_USER }}
-          password: ${{ secrets.MULA_API_PASS }}
-          script: 'cd /var/www/mula-api && ./deployer.sh'
+          host: ${{ secrets.MULA_API_TEST_HOST }}
+          username: ${{ secrets.MULA_API_TEST_USERNAME }}
+          password: ${{ secrets.MULA_API_TEST_PASS }}
+          script: 'cd /var/www/html/api/mula-api-test && ./deployer.sh'
