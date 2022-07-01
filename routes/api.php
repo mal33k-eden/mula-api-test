@@ -18,6 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//unprotected route
 Route::post('/create-user', [\App\Http\Controllers\AuthController::class,'register']);
 Route::post('/login', [\App\Http\Controllers\AuthController::class,'login']);
 Route::post('/biometric-login', [\App\Http\Controllers\AuthController::class,'loginBiometric']);
