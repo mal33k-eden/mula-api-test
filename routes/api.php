@@ -24,7 +24,7 @@ Route::post('/biometric-login', [\App\Http\Controllers\AuthController::class,'lo
 Route::post('/is-field-available', [\App\Http\Controllers\AuthController::class,'isFieldAvailable']);
 Route::post('/is-wallet-linked', [\App\Http\Controllers\AuthController::class,'isWalletLinked']);
 
-
+//protected route
 Route::group(['middleware'=>['auth:sanctum']], function (){
     Route::post('/logout', [\App\Http\Controllers\AuthController::class,'logout']);
     Route::post('/reset-password', [\App\Http\Controllers\AuthController::class,'resetPassword']);
