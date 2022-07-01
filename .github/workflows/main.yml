@@ -15,4 +15,4 @@ jobs:
           host: ${{ secrets.MULA_API_TEST_HOST }}
           username: ${{ secrets.MULA_API_TEST_HOST_USERNAME }}
           key: ${{ secrets.MULA_API_TEST_KEY }}
-          script: 'cd /var/www/html/api/mula-api-test && ./deployer.sh && sudo chmod -R 775 bootstrap/cache && sudo chmod -R 775 storage'
+          script: 'sudo chown -R :www-data /var/www/html/api/mula-api-test && cd /var/www/html/api/mula-api-test && ./deployer.sh && sudo chmod -R 775 bootstrap/cache && sudo chmod -R 775 storage'
