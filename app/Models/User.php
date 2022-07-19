@@ -94,6 +94,9 @@ class User extends Authenticatable
          if ($country != null){
              $this->connected_country_id = $country->id;
              $this->save();
+         }else{
+             $this->connected_country_id = 1;
+             $this->save();
          }
     }
 

@@ -31,7 +31,7 @@ class AuthController extends Controller
         ]);
          if ($request->has('profile_photo')){
              $request->validate([
-                 'profile_photo' => 'image|mimes:jpeg,png,jpg',
+                 'profile_photo' => 'image|mimes:jpeg,png,jpg,heic',
              ]);
              $imageName = time().Str::slug($request->first_name.' '.$request->last_name,'_').'.'.$request->profile_photo->extension();
              $request->file('profile_photo')->storeAs(
